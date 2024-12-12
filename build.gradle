@@ -29,7 +29,9 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter'
+    implementation 'dev.langchain4j:langchain4j-ollama-spring-boot-starter:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-spring-boot-starter:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-easy-rag:0.36.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
