@@ -2,6 +2,8 @@ package com.example.hackaton;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,8 +12,9 @@ public class WebController {
     @Autowired
     private Medibot medibot;
 
-    @GetMapping
-    public String getChat(){
-        return medibot.proposeAnalysis("What is the biggest state in the USA");
+    @PostMapping("/submit")
+    public void getChat(@RequestParam String prompt/* Patientdata zogezegd*/){
+        Response answer = medibot.proposeAnalysis(prompt);
+        System.out.println(answer);
     }
 }
